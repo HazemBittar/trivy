@@ -1,7 +1,8 @@
 {
   "SchemaVersion": 2,
-  "ArtifactName": "testdata/fixtures/fs/custom-policy",
-  "ArtifactType": "filesystem",
+  "CreatedAt": "2021-08-25T12:20:30.000000005Z",
+  "ArtifactName": "testdata/fixtures/repo/custom-policy",
+  "ArtifactType": "repository",
   "Metadata": {
     "ImageConfig": {
       "architecture": "",
@@ -20,30 +21,47 @@
       "Class": "config",
       "Type": "dockerfile",
       "MisconfSummary": {
-        "Successes": 0,
-        "Failures": 2,
-        "Exceptions": 0
+        "Successes": 28,
+        "Failures": 2
       },
       "Misconfigurations": [
         {
-          "Type": "N/A",
+          "Type": "Dockerfile Security Check",
           "ID": "N/A",
           "Title": "N/A",
+          "Description": "Rego module: data.user.bar",
           "Message": "something bad: bar",
           "Namespace": "user.bar",
           "Query": "data.user.bar.deny",
           "Severity": "UNKNOWN",
-          "Status": "FAIL"
+          "Status": "FAIL",
+          "Layer": {},
+          "CauseMetadata": {
+            "Provider": "Generic",
+            "Service": "general",
+            "Code": {
+              "Lines": null
+            }
+          }
         },
         {
-          "Type": "N/A",
+          "Type": "Dockerfile Security Check",
           "ID": "N/A",
           "Title": "N/A",
+          "Description": "Rego module: data.user.foo",
           "Message": "something bad: foo",
           "Namespace": "user.foo",
           "Query": "data.user.foo.deny",
           "Severity": "UNKNOWN",
-          "Status": "FAIL"
+          "Status": "FAIL",
+          "Layer": {},
+          "CauseMetadata": {
+            "Provider": "Generic",
+            "Service": "general",
+            "Code": {
+              "Lines": null
+            }
+          }
         }
       ]
     }
